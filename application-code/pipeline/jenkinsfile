@@ -25,7 +25,11 @@ node {
    sh label: '', script: 'mvn install'
   }
   
-	
+	stage('Snyk-test') {
+    sh label: '', script: 'mvn -N io.takari:maven:wrapper'
+   // snykSecurity severity: 'high', snykInstallation: 'SnykPluginTEst', snykTokenId: 'mytoken'
+   snykSecurity failOnIssues: false, snykInstallation: 'SnykPluginTEst', snykTokenId: 'mytoken'
+  }
  
   }
 }
