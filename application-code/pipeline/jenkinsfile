@@ -21,9 +21,9 @@ node {
    sh label: '', script: 'mvn compile'
   }
   
-   stage('Maven-Install') {
-   sh label: '', script: 'mvn install'
-  }
+//   stage('Maven-Install') {
+  // sh label: '', script: 'mvn install'
+ // }
   
 	stage('Snyk-test') {
     sh label: '', script: 'mvn -N io.takari:maven:wrapper'
